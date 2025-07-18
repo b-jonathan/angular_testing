@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Currency Converter</h1>
+
+  <div class="form">
+    <select [(ngModel)]="baseCurrency">
+      <option *ngFor="let c of currencies()" [value]="c">{{ c }}</option>
+    </select>
+
+    <span>→</span>
+
+    <select [(ngModel)]="targetCurrency">
+      <option *ngFor="let c of currencies()" [value]="c">{{ c }}</option>
+    </select>
+
+    <button (click)="convert()">Convert</button>
+  </div>
+
+  <div class="result" *ngIf="result()">
+    {{ result() }}
+  </div>
+</div>
