@@ -39,4 +39,11 @@ export class ConverterComponent implements OnInit {
         this.result.set(`1 ${from} = ${rate} ${to}`);
       });
   }
+
+  swap() {
+    const from = this.baseCurrency();
+    const to = this.targetCurrency();
+    this.baseCurrency.set(to);
+    this.targetCurrency.set(from);
+  }
 }

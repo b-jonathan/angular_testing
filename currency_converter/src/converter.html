@@ -6,7 +6,7 @@
       <option *ngFor="let c of currencies()" [value]="c">{{ c }}</option>
     </select>
 
-    <span>→</span>
+    <span (click)="swap();convert()" style="cursor: pointer;">⇄</span>
 
     <select [(ngModel)]="targetCurrency">
       <option *ngFor="let c of currencies()" [value]="c">{{ c }}</option>
@@ -15,7 +15,7 @@
     <button (click)="convert()">Convert</button>
   </div>
 
-  <div class="result" *ngIf="result()">
+  <div class="result" *ngIf="result">
     {{ result() }}
   </div>
 </div>
